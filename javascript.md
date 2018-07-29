@@ -110,6 +110,10 @@ colors[2] = "green"; // ["red", "yellow", "green"]
 // Array.push(<newItem>);
 colors.push("blue"); // ["red", "yellow", "green", "blue"]
 
+// Get the length of the array
+// Array.length <-- NO PARENTHESES!
+colors.length // 4
+
 // Insert a value at position <pos>
 // Array.splice(<pos>, 0, <newItem>);
 colors.splice(1, 0, "orange"); // ["red", "orange", "yellow", "green", "blue"]
@@ -135,26 +139,28 @@ if (<condition1>) {
 } else {
   // do these if nothing matches
 } */
+
 var number = 10;
 if (number < 5) {
-  // do something
+  console.log("number is too small");
 } else if (number > 15) {
-  // do something else
+  console.log("number is too big");
 } else {
-  // do this if all other if statements are false
+  console.log("number is just right!");
 }
 
 /* 'switch' statements:
 switch (<var>) {
   case <case1>:
     // do stuff
-    break;
+    break; // DON'T FORGET THE BREAK AFTER EACH CASE!
   case <case2>:
     // do other stuff
     break;
   default:
     // do this otherwise (if none of the other cases match)
 } */
+
 var fruit = "apple";
 switch (fruit) {
   case "apple":
@@ -168,9 +174,44 @@ switch (fruit) {
 }
 ```
 
+#### 1.7.1 Comparisons
+```js
+// Logical AND: Both <condition 1> and <condition 2> must be true
+// <condition 1> && <condition 2>
+
+// Logical OR: Either <condition 1> or <condition 2> must be true
+// <condition 1> || <condition 2>
+
+// Logical NOT: Change <condition> from true to false, or false to true
+// !<condition 1>
+
+// Comparison operators (less than, less or equal, greater than, greater or equal, not equal, equals
+// <, <=, >, >=, !=, ==
+
+// Strict equality or inequality: Checks both VALUE and TYPE
+// !==, ===
+```
+
 ### 1.8 &ensp; Loops
 ```js
+/* 'for' loop:
+for (<initialize>; <continuing condition>; <increment>) {
+  // do stuff 
+} */
 
+for (var i = 0; i < 10; i++) {
+  console.log(i);
+}
+
+/* 'while' loop:
+while (<continuing condition>) {
+  // do repeating things
+} */
+
+var gameEnded = false;
+while (!gameEnded) {
+  // play game
+}
 ```
 
 ### 1.9 &ensp; Functions
@@ -188,7 +229,28 @@ function add(a, b) {
 
 ### 1.10 &ensp; Error Handling
 ```js
+/* 'try-catch' statements
+try {
+  // code that can go wrong
+} catch (error) {
+  // do something with the error
+}
 
+// Throw custom error if something isn't right, for example if the user supplied a String instead of a Number
+throw new Error("what went wrong");
+*/
+
+var a = 10;
+var b = 0;
+
+try {
+  if (b == 0) {
+    throw new Error("Division by 0");
+  }
+  document.write(a / b);
+} catch (error) {
+  console.log(error.message);
+}
 ```
 
 ## 2 &ensp; Introduction to JavaScript, Lecture 2
