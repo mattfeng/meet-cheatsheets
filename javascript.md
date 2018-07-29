@@ -88,6 +88,13 @@ var lastName = fulllName.substring(8, 12); // "Feng"
 // String.split(<divider>)
 var names = fullName.split(" "); // ["Matthew", "Feng"]
 
+// Convert String to all uppercase - doesn't modify the original String
+// String.toUpperCase();
+var message = "Hi There";
+message.toUpperCase(); // "HI THERE"
+
+// Convert String to all lowercase - doesn't modify the original String
+message.toLowerCase(); // "hi there"
 ```
 
 ### 1.6 &ensp; Arrays
@@ -117,15 +124,79 @@ colors.reverse(); // ["yellow", "red", "orange", "green", "blue"]
 ```
 
 ### 1.7 &ensp; Conditionals
+```js
+/* 'if-else if-else' statements:
+if (<condition1>) {
+  // do things
+} else if (<condition2>) {
+  // do other things
+} else if (<condition3>) {
+  // do other other things
+} else {
+  // do these if nothing matches
+} */
+var number = 10;
+if (number < 5) {
+  // do something
+} else if (number > 15) {
+  // do something else
+} else {
+  // do this if all other if statements are false
+}
+
+/* 'switch' statements:
+switch (<var>) {
+  case <case1>:
+    // do stuff
+    break;
+  case <case2>:
+    // do other stuff
+    break;
+  default:
+    // do this otherwise (if none of the other cases match)
+} */
+var fruit = "apple";
+switch (fruit) {
+  case "apple":
+    console.log("I love apples");
+    break;
+  case "pear":
+    console.log("Pear is ok");
+    break;
+  default:
+    console.log("All other fruit is awesome");
+}
+```
 
 ### 1.8 &ensp; Loops
+```js
+
+```
 
 ### 1.9 &ensp; Functions
+```js
+// Define a new function
+function myFunction() {
+  // your code here
+}
+
+// Define a function that has two parameters and returns a value
+function add(a, b) {
+  return a + b;
+}
+```
 
 ### 1.10 &ensp; Error Handling
+```js
+
+```
 
 ## 2 &ensp; Introduction to JavaScript, Lecture 2
 
 ### 2.1
+```
+```
 
 ### 2.2
+```
+```
