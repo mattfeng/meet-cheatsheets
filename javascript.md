@@ -236,7 +236,8 @@ try {
   // do something with the error
 }
 
-// Throw custom error if something isn't right, for example if the user supplied a String instead of a Number
+// Throw (also known as 'raising an error') custom error if something isn't right, for example
+//   if the user supplied a String instead of a Number
 throw new Error("what went wrong");
 */
 
