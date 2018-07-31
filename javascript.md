@@ -256,10 +256,130 @@ try {
 
 ## 2 &ensp; Introduction to JavaScript, Lecture 2
 
-### 2.1
-```
+### 2.1 &ensp; Objects
+#### 2.1.1 &ensp; Object literals
+```js
+/* 
+Explicitly write out the values for the properties of an Object
+Objects in JavaScript are similar to dictionaries in Python: key -> value pairs.
+
+var objectName = {
+    property1: value1,
+    property2: value2,
+    property3: value3
+}
+*/
+
+var person = {
+    firstName: "Matthew",
+    lastName: "Feng",
+    age: 19,
+    favoriteFoods: ["dumplings", "kiwi"], // you can have arrays in objects
+    job: { // you can embed objects in objects
+        position: "Research Intern",
+        company: "NIST"
+    },
+    fullName: function () { // you can even have functions in objects!
+        this.firstName + " " + this.lastName;
+    }
+}
 ```
 
-### 2.2
+#### 2.1.2 &ensp; Object constructors
+```js
+/*
+Define an Object constructor 
+function ObjectName(param1, param2, param3) {
+    this.property1 = param1;
+    this.property2 = param2;
+    this.property3 = param3;
+
+    this.method = function () {
+        // do something 
+    }
+}
+
+// Creating a new object using the constructor
+object1 = new ObjectName('a', 'b', 'c');
+*/
 ```
+
+### 2.2 &ensp; JSON
+```js
+var harryPotter = {
+    title: "Harry Potter and the Philosopher's Stone",
+    author: "J. K. Rowling"
+}
+
+// Convert an Object into a JSON string
+// JSON.stringify(<object>)
+harryPotterString = JSON.stringify(happyPotter);
+
+// Convert an JSON string into an object
+// JSON.parse(<json-string>)
+JSON.parse(harryPotterString);
+```
+
+### 2.3 &ensp; Selecting and Modifying Elements on the DOM
+```js
+/*
+document.getElementById(<id>) // gets a unique element from the DOM using the id attribute
+document.getElementsByClassName(<class>) // returns a list of elements that have class <class>
+document.getElementsByTagName(<tag>) // returns a list of elements that have tag <tag>
+*/
+
+document.getElementById("myButton") // selects the element with id of "myButton"
+document.getElementsByClassName("message") // selects ALL ELEMENTS with class of "message"
+document.getElementsByTagName("p") // selects all paragraphs on the page
+
+/*
+Editing properties of DOM elements
+DOMElement.style // change the style of an element
+DOMElement.innerHTML // change the content of an element
+*/
+
+var btn = document.getElementById("myButton");
+btn.style.backgroundColor = "red";
+btn.innerHTML = "I'm different now!";
+```
+
+### 2.4 &ensp; Events
+```html
+<!-- Call functionName() when eventName happens -->
+<tag eventName="functionName()">...</tag>
+<!-- If you want to pass the object that got the event -->
+<tag eventName="functionName(this)">...</tag>
+```
+
+In `my-page.html`:
+```html
+<button onclick="alertMe()">Surprise!</button>
+<button onclick="changeText(this)">Click me!</button>
+
+<script src="events.js"></script>
+```
+
+In `events.js` (a separate file!):
+```js
+function alertMe() {
+    alert("Hi!");
+}
+function changeText(object) {
+    object.innerHTML = "You clicked me!";
+}
+```
+
+### 2.5 &ensp; Event Listeners
+```js
+/* Attach an event listener to DOMElement
+DOMElement.addEventListener(<eventName>, function (event) {
+    // do stuff here
+    // event.target is the object that was clicked
+});
+*/
+
+var body = document.getElementByTagName("body")[0]; // we have to do [0] because the function ALWAYS returns a list.
+body.addEventListener("click", function (event) {
+    alert("You clicked!");
+});
 ```
