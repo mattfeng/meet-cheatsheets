@@ -5,6 +5,8 @@ In JavaScript code, if you see ``<parameter>``, you should replace ``<parameter>
 
 For example, ``Array.push(<newItem>)`` might become ``names.push("Matt")``, where ``names`` is type ``Array``, and ``"Matt"`` is the new item I want to add. There should not be any angle brackets (`<`, `>`).
 
+If you see `DOMElement`, that means any element on the DOM that you would select using `document.getElementsByTagName(<tag>)[<index>]`, `document.getElementsByClassName(<class>)[<index>]`, or `document.getElementById(<id>)`.
+
 ## 1 &ensp; Introduction to JavaScript, Lecture 1
 
 ### 1.1 &ensp; Adding JavaScript to your Web Page
