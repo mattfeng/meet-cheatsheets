@@ -378,7 +378,8 @@ DOMElement.addEventListener(<eventName>, function (event) {
 });
 */
 
-var body = document.getElementByTagName("body")[0]; // we have to do [0] because the function ALWAYS returns a list.
+// we have to add the [0] because the function ALWAYS returns a list.
+var body = document.getElementByTagName("body")[0];
 body.addEventListener("click", function (event) {
     alert("You clicked!");
 });
